@@ -21,17 +21,20 @@
   <header class="site-header">
     <nav class="nav container">
       <a href="#home" class="logo">Tanvir Khan</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gre-tips">GRE Tips</a></li>
-        <li><a href="#gre">Enroll</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gre-tips">GRE Tips</a></li>
+          <li><a href="#gre">Enroll</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch to light theme">🌙</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </nav>
   </header>
 
@@ -41,7 +44,7 @@
       <canvas id="hero-canvas"></canvas>
       <div class="container hero-inner">
         <div>
-          <span class="hero-eyebrow">GRE Instructor &middot; Academic Team Lead</span>
+          <span class="hero-eyebrow">Founder, Nishchit &middot; GRE Instructor &middot; Corporate AI Trainer</span>
           <h1>Md. Tanvir Khan turns <span class="highlight">GRE anxiety</span> into acceptance letters.</h1>
           <p class="tagline">Six years, 70+ batches and 4,000+ teaching hours guiding students in Dhaka to their target GRE and IBA-MBA admission scores.</p>
           <div class="hero-actions">
@@ -77,19 +80,20 @@
           </p>
           <p>
             Over the past six years, Tanvir has guided thousands of students toward their target GRE
-            scores while also mentoring IBA-MBA aspirants and running subject tutoring in Math, Physics,
-            Chemistry, and English. Before moving into full-time education, he led production planning
-            and a 160-member team as a Sub-Assistant Manager at PRAN-RFL Group — experience that shapes
-            the structure, discipline, and leadership he brings into the classroom. He's also an active
+            scores while also mentoring IBA-MBA aspirants and tutoring Math, Physics, Chemistry, and
+            English. He founded and personally mentors Nishchit, his own GRE prep program; leads the
+            trainer team at NetCom Learning Bangladesh delivering corporate training on Generative AI
+            and leadership; and founded LearnSmart, a web-based learning platform. He's also an active
             AI-tool user (ChatGPT, Claude, Copilot, and more), weaving them into how he builds course
-            content and personalizes feedback.
+            content, trains corporate teams, and personalizes feedback.
           </p>
         </div>
         <ul class="fact-list">
           <li><span class="fact-label">Location</span>Dhaka, Bangladesh</li>
           <li><span class="fact-label">Education</span>MBA, IBA — University of Dhaka<br>B.Sc. in Food Engineering &amp; Tea Technology, SUST</li>
-          <li><span class="fact-label">Focus areas</span>GRE &amp; IBA-MBA prep, school-level tutoring, seminars &amp; trainings</li>
-          <li><span class="fact-label">Leadership</span>Former university club president; ex-production team lead of 160+ staff</li>
+          <li><span class="fact-label">Focus areas</span>GRE &amp; IBA-MBA prep, school-level tutoring, corporate Gen AI &amp; soft-skills training</li>
+          <li><span class="fact-label">Founder</span>Nishchit GRE Learning Program &middot; LearnSmart</li>
+          <li><span class="fact-label">Leadership</span>Former university club president</li>
         </ul>
       </div>
     </section>
@@ -98,9 +102,42 @@
     <section id="experience" class="section section-alt reveal">
       <div class="container">
         <span class="section-kicker">Experience</span>
-        <h2>Where the teaching (and the leading) happened.</h2>
-        <p class="section-intro">A track record built across ed-tech companies, coaching centers, and — before that — a factory floor.</p>
+        <h2>Where the teaching (and the founding) happens.</h2>
+        <p class="section-intro">A track record spanning founder-led ventures, corporate training, and ed-tech coaching.</p>
         <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Jul 2026 &ndash; Present</div>
+            <div class="timeline-body">
+              <h3>Founder &amp; Mentor</h3>
+              <span class="timeline-org">Nishchit (নিশ্চিত) GRE Learning Program</span>
+              <ul>
+                <li>Founded and personally mentor Nishchit, a GRE prep program built around structured batches, personalized feedback, and measurable score outcomes.</li>
+                <li>Designed the curriculum, mock-test cadence, and mentorship model powering the program end-to-end.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Aug 2025 &ndash; Present</div>
+            <div class="timeline-body">
+              <h3>Lead, Trainer Team</h3>
+              <span class="timeline-org">NetCom Learning Bangladesh</span>
+              <ul>
+                <li>Lead the trainer team delivering corporate training on Generative AI adoption and applied soft skills.</li>
+                <li>Design and conduct sessions on leadership, people management, critical reasoning, and emotional intelligence for corporate clients.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Ongoing</div>
+            <div class="timeline-body">
+              <h3>Founder</h3>
+              <span class="timeline-org">LearnSmart</span>
+              <ul>
+                <li>Founded LearnSmart, a web-based learning platform built to make structured, self-paced learning more accessible.</li>
+                <li>Leading product direction and content design from the ground up.</li>
+              </ul>
+            </div>
+          </div>
           <div class="timeline-item">
             <div class="timeline-date">Mar 2024 &ndash; Present</div>
             <div class="timeline-body">
@@ -132,17 +169,6 @@
               <ul>
                 <li>Delivered live sessions on IBA-MBA preparation covering syllabus, strategy, and study guidance.</li>
                 <li>Supported content and marketing development, including test creation and visual materials.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">Feb 2021 &ndash; Dec 2021</div>
-            <div class="timeline-body">
-              <h3>Sub-Assistant Manager</h3>
-              <span class="timeline-org">PRAN-RFL Group</span>
-              <ul>
-                <li>Planned and executed production across two production lines.</li>
-                <li>Led a team of 160+ members.</li>
               </ul>
             </div>
           </div>

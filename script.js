@@ -2,6 +2,31 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+// Theme toggle (dark is the default brand look; light is opt-in, remembered)
+const THEME_KEY = 'site-theme';
+const themeToggle = document.getElementById('themeToggle');
+const themeChangeListeners = [];
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  if (themeToggle) {
+    themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
+    themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+  }
+  themeChangeListeners.forEach(fn => fn(theme));
+}
+
+let currentTheme = localStorage.getItem(THEME_KEY) || 'dark';
+applyTheme(currentTheme);
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+    localStorage.setItem(THEME_KEY, currentTheme);
+    applyTheme(currentTheme);
+  });
+}
+
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
@@ -103,8 +128,9 @@ if (!isTouch && !reduceMotion) {
   resize();
   window.addEventListener('resize', resize);
 
-  // Gold wireframe polyhedra
-  const gold = 0xe0b94f;
+  // Gold wireframe polyhedra — color adapts to the active theme
+  const goldByTheme = { dark: 0xe0b94f, light: 0xa9740f };
+  const gold = goldByTheme[currentTheme] || goldByTheme.dark;
   const shapes = [];
   const geoTypes = [
     new THREE.IcosahedronGeometry(9, 0),
@@ -133,6 +159,12 @@ if (!isTouch && !reduceMotion) {
   const particleMat = new THREE.PointsMaterial({ color: gold, size: 0.5, transparent: true, opacity: 0.6 });
   const particles = new THREE.Points(particleGeo, particleMat);
   scene.add(particles);
+
+  themeChangeListeners.push((theme) => {
+    const hex = goldByTheme[theme] || goldByTheme.dark;
+    shapes.forEach(mesh => mesh.material.color.setHex(hex));
+    particleMat.color.setHex(hex);
+  });
 
   let mouseX = 0, mouseY = 0;
   window.addEventListener('mousemove', (e) => {
